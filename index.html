@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta property="og:title" content="Transkood">
+<meta property="og:site_name" content="Transkood">
+<meta property="og:description" content="Just text">
+<title>Transkood</title>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #0d1117;
+            color: white;
+            font-family: "Mosterrat", sans-serif;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            overflow: auto;
+            user-select: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        a {
+            margin: 0.5em;
+            padding: 0.3em;
+            font-size: 1.2em;
+            background: transparent;
+            border-radius: 0.4em;
+            border-style: none;
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: unset;
+        }
+
+        .green {
+            text-shadow: 0 0 25px rgb(11, 190, 92);
+        }
+
+        .green:hover {
+            text-shadow: 0 0 100px rgb(11, 190, 11);
+        }
+
+        .blue {
+            text-shadow: 0 0 25px rgb(11, 89, 190);
+        }
+
+        .blue:hover {
+            text-shadow: 0 0 100px rgb(11, 178, 190);
+        }
+
+        .glitch {
+            position: relative;
+            color: white;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+
+        .glitch::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(93px, 9999px, 26px, 0);
+                transform: skew(0.25deg);
+            }
+
+            5% {
+                clip: rect(7px, 9999px, 90px, 0);
+                transform: skew(0.08deg);
+            }
+
+            10% {
+                clip: rect(98px, 9999px, 31px, 0);
+                transform: skew(0.49deg);
+            }
+
+            15% {
+                clip: rect(8px, 9999px, 2px, 0);
+                transform: skew(1deg);
+            }
+
+            20% {
+                clip: rect(43px, 9999px, 75px, 0);
+                transform: skew(0.66deg);
+            }
+
+            25% {
+                clip: rect(53px, 9999px, 61px, 0);
+                transform: skew(0.99deg);
+            }
+
+            30% {
+                clip: rect(2px, 9999px, 55px, 0);
+                transform: skew(0.95deg);
+            }
+
+            35% {
+                clip: rect(90px, 9999px, 11px, 0);
+                transform: skew(0.7deg);
+            }
+
+            40% {
+                clip: rect(68px, 9999px, 27px, 0);
+                transform: skew(0.22deg);
+            }
+
+            45% {
+                clip: rect(66px, 9999px, 46px, 0);
+                transform: skew(0.03deg);
+            }
+
+            50% {
+                clip: rect(49px, 9999px, 99px, 0);
+                transform: skew(0.38deg);
+            }
+
+            55% {
+                clip: rect(45px, 9999px, 53px, 0);
+                transform: skew(0.24deg);
+            }
+
+            60% {
+                clip: rect(73px, 9999px, 88px, 0);
+                transform: skew(0.51deg);
+            }
+
+            65% {
+                clip: rect(51px, 9999px, 31px, 0);
+                transform: skew(0.51deg);
+            }
+
+            70% {
+                clip: rect(21px, 9999px, 79px, 0);
+                transform: skew(0.88deg);
+            }
+
+            75% {
+                clip: rect(14px, 9999px, 39px, 0);
+                transform: skew(0.84deg);
+            }
+
+            80% {
+                clip: rect(5px, 9999px, 100px, 0);
+                transform: skew(0.6deg);
+            }
+
+            85% {
+                clip: rect(33px, 9999px, 9px, 0);
+                transform: skew(0.55deg);
+            }
+
+            90% {
+                clip: rect(13px, 9999px, 35px, 0);
+                transform: skew(0.5deg);
+            }
+
+            95% {
+                clip: rect(73px, 9999px, 91px, 0);
+                transform: skew(0.45deg);
+            }
+
+            100% {
+                clip: rect(30px, 9999px, 65px, 0);
+                transform: skew(0.12deg);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(33px, 9999px, 54px, 0);
+                transform: skew(0.74deg);
+            }
+
+            5% {
+                clip: rect(97px, 9999px, 35px, 0);
+                transform: skew(0.4deg);
+            }
+
+            10% {
+                clip: rect(78px, 9999px, 5px, 0);
+                transform: skew(0.67deg);
+            }
+
+            15% {
+                clip: rect(93px, 9999px, 49px, 0);
+                transform: skew(0.12deg);
+            }
+
+            20% {
+                clip: rect(8px, 9999px, 28px, 0);
+                transform: skew(0.91deg);
+            }
+
+            25% {
+                clip: rect(89px, 9999px, 59px, 0);
+                transform: skew(0.13deg);
+            }
+
+            30% {
+                clip: rect(54px, 9999px, 71px, 0);
+                transform: skew(0.57deg);
+            }
+
+            35% {
+                clip: rect(82px, 9999px, 23px, 0);
+                transform: skew(0.7deg);
+            }
+
+            40% {
+                clip: rect(31px, 9999px, 63px, 0);
+                transform: skew(0.77deg);
+            }
+
+            45% {
+                clip: rect(82px, 9999px, 35px, 0);
+                transform: skew(0.03deg);
+            }
+
+            50% {
+                clip: rect(41px, 9999px, 37px, 0);
+                transform: skew(0.25deg);
+            }
+
+            55% {
+                clip: rect(86px, 9999px, 86px, 0);
+                transform: skew(0.36deg);
+            }
+
+            60% {
+                clip: rect(37px, 9999px, 74px, 0);
+                transform: skew(0.62deg);
+            }
+
+            65% {
+                clip: rect(17px, 9999px, 8px, 0);
+                transform: skew(0.89deg);
+            }
+
+            70% {
+                clip: rect(19px, 9999px, 50px, 0);
+                transform: skew(0.48deg);
+            }
+
+            75% {
+                clip: rect(86px, 9999px, 99px, 0);
+                transform: skew(0.24deg);
+            }
+
+            80% {
+                clip: rect(11px, 9999px, 98px, 0);
+                transform: skew(0.28deg);
+            }
+
+            85% {
+                clip: rect(38px, 9999px, 35px, 0);
+                transform: skew(0.37deg);
+            }
+
+            90% {
+                clip: rect(8px, 9999px, 100px, 0);
+                transform: skew(0.08deg);
+            }
+
+            95% {
+                clip: rect(57px, 9999px, 33px, 0);
+                transform: skew(0.18deg);
+            }
+
+            100% {
+                clip: rect(91px, 9999px, 6px, 0);
+                transform: skew(0.39deg);
+            }
+        }
+
+        @keyframes glitch-skew {
+            0% {
+                transform: skew(0deg);
+            }
+
+            10% {
+                transform: skew(0deg);
+            }
+
+            20% {
+                transform: skew(3deg);
+            }
+
+            30% {
+                transform: skew(-4deg);
+            }
+
+            40% {
+                transform: skew(3deg);
+            }
+
+            50% {
+                transform: skew(1deg);
+            }
+
+            60% {
+                transform: skew(1deg);
+            }
+
+            70% {
+                transform: skew(-1deg);
+            }
+
+            80% {
+                transform: skew(-1deg);
+            }
+
+            90% {
+                transform: skew(0deg);
+            }
+
+            100% {
+                transform: skew(-4deg);
+            }
+        }
+
+        .preloader {
+            z-index: 999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #131A43;
+        }
+    </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+</head>
+<body>
+<div class="preloader">
+</div>
+<div class="block">
+<h1 class="glitch" style="text-align: center;" data-text="GeekTG Team" onclick="location.href = 'https://github.com/GeekTG'">
+GeekTG Team
+</h1>
+<br>
+<br>
+<a style="text-align: center;" class="green" href="https://t.me/transkoodtech">Telegram</a>
+<a style="text-align: center;" class="blue" href="https://github.com/transkood">B2B/a>
+</div>
+<script>
+        $(document).ready(() => {
+            VANTA.HALO({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 120.00,
+                minWidth: 120.00,
+                size: 1.25
+            })
+            setTimeout(()=>$('.preloader').fadeOut(500), 100)
+        })
+
+    </script>
+</body>
+</html>
