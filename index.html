@@ -380,20 +380,17 @@ Transkood
 <a style="text-align: center;" class="green" href="https://t.me/transkood_chat">Chat</a>
 <a style="text-align: center;" class="blue" href="https://github.com/transkood">B2B</a>
 </div>
+<script src="three.r119.min.js"></script>
+<script src="vanta.clouds.min.js"></script>
 <script>
-        $(document).ready(() => {
-            VANTA.HALO({
-                el: "body",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 120.00,
-                minWidth: 120.00,
-                size: 1.25
-            })
-            setTimeout(()=>$('.preloader').fadeOut(500), 100)
-        })
-
-    </script>
+VANTA.CLOUDS({
+  el: "#your-element-selector",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00
+})
+</script>
 </body>
 </html>
